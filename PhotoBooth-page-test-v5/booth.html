@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="id"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Photo booth (percobaan v5)</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;600;700;800&family=Playfair+Display:ital,wght@0,600;1,600&display=swap">
+<link rel="stylesheet" href="style.css"><link rel="stylesheet" href="theme.css"><link rel="stylesheet" href="booth.css"></head>
+<body><main>
+<!-- ===== MULAI: salin section ini ke index.html (sebelum page final) ===== -->
+<section class="page active" id="page-04">
+  <div class="page-inner">
+    <div class="page-top"><div class="page-label">04 / photo booth</div><div class="date-pill">our newest memory</div></div>
+    <ol class="steps"><li class="on">Frame</li><li>Shoot</li><li>Done</li></ol>
+    <div class="booth">
+      <div class="stage">
+        <div class="vp"><div class="tile"><video id="bVideo" playsinline muted></video><em id="nMe">kamu</em></div><div class="tile" id="pTile"><video id="pVideo" playsinline autoplay></video><em id="nP">pasangan</em></div><div id="bCount"></div><div id="bFlash"></div></div>
+        <canvas id="bResult"></canvas>
+        <div id="bSlots" class="slots"></div>
+        <p id="bMsg" class="bmsg">Pilih gaya, lalu aktifkan kamera.</p>
+      </div>
+      <div class="panel">
+        <h2>Foto bareng,<br>kenangan baru.</h2>
+        <div class="grp"><span>nama</span><input id="bName" maxlength="14" placeholder="namamu"><i class="dot on" data-c="#ff7db8" style="background:#ff7db8"></i><i class="dot" data-c="#69d9ff" style="background:#69d9ff"></i><i class="dot" data-c="#ffb35c" style="background:#ffb35c"></i></div>
+        <div class="grp"><span>mode</span><button class="chip on" data-k="m" data-v="solo">Sendiri</button><button class="chip" data-k="m" data-v="duo">Berdua (virtual)</button></div>
+        <div class="grp"><span>bingkai</span><div class="cards" id="bL"></div></div>
+        <div class="grp"><span>filter</span><button class="chip on" data-k="f" data-v="natural">Natural</button><button class="chip" data-k="f" data-v="sakura">Sakura</button><button class="chip" data-k="f" data-v="ocean">Ocean</button><button class="chip" data-k="f" data-v="film">Film</button></div>
+        <div class="grp"><span>latar</span><button class="chip on" data-k="b" data-v="none">Asli</button><button class="chip" data-k="b" data-v="blur">Blur</button><button class="chip" data-k="b" data-v="sakura">Sakura</button><button class="chip" data-k="b" data-v="ocean">Samudra</button></div>
+        <div class="grp"><span>stiker</span><button class="chip on" data-k="s" data-v="none">Tanpa</button><button class="chip" data-k="s" data-v="ears">🐱 Kuping kucing</button><button class="chip" data-k="s" data-v="crown">🌸 Mahkota bunga</button><button class="chip" data-k="s" data-v="glasses">👓 Kacamata</button></div>
+        <div class="grp"><span>tema</span><div class="cards" id="bT"></div></div>
+        <div class="grp"><span>dekor</span><button class="chip on" data-k="dc" data-v="polos">Polos</button><button class="chip" data-k="dc" data-v="birthday">Birthday</button><button class="chip" data-k="dc" data-v="cozy">Cozy</button><button class="chip" data-k="dc" data-v="jepang">Jepang</button><button class="chip" data-k="dc" data-v="langit">Langit</button></div>
+        <div class="grp" id="bDg" style="display:none"><span></span><div class="cards" id="bD"></div></div>
+        <div id="bPart" class="part"><span>PARTNER</span><b id="pName">menunggu…</b><i id="pDot"></i></div>
+        <div id="bInvite" class="invite">
+          <b>undang pasangan</b>
+          <p id="bInfo">Buat room, lalu kirim link-nya. Kalian foto bersamaan dari HP masing-masing.</p>
+          <div id="bCode"></div>
+          <div class="acts">
+            <button id="bInv" class="btn primary">undang pasangan</button>
+            <button id="bWA" class="btn primary">kirim lewat WhatsApp</button>
+            <button id="bCopy" class="btn ghost">salin link</button>
+          </div>
+        </div>
+        <div class="acts">
+          <button id="bCam" class="btn primary">aktifkan kamera</button>
+          <button id="bReady" class="btn primary">READY</button>
+          <button id="bShoot" class="btn primary">mulai foto</button>
+          <button id="bMic" class="btn ghost">mic on</button>
+          <button id="bSave" class="btn primary">unduh foto</button>
+          <button id="bAgain" class="btn ghost">ulangi</button>
+        </div>
+      </div>
+    </div>
+    <div class="page-nav"><button class="btn ghost" data-prev>← page 03</button><span>04 / 05</span><button class="btn primary" data-next>one last thing →</button></div>
+  </div>
+</section>
+<!-- ===== SELESAI ===== -->
+</main>
+<script src="https://cdn.jsdelivr.net/npm/peerjs@1.5.4/dist/peerjs.min.js"></script>
+<script src="booth.js"></script></body></html>
